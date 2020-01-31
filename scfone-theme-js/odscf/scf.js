@@ -1,5 +1,7 @@
+// 针对 20200120.02 版本
 // 忽略异常
 const IGNORE_EXCEPTION = (funs) => funs.forEach(fun => { try { fun(); } catch (error) { } });
+// const IGNORE_EXCEPTION = (funs) => funs.forEach(fun => fun());
 
 // 资源加载后回调
 const LOADED = (element, callback) => {
@@ -34,16 +36,21 @@ const FONT_PINGYONG = HEREDOC(() => {/*
 // 雨伞背景
 const ADD_UMBRELLA_BACKGROUND = (callback) => {
     const SCRIPT = document.createElement('script');
-    SCRIPT.src = '//s0.pstatp.com/cdn/expire-1-M/canvas-nest.js/2.0.4/canvas-nest.js';
+    
+	// SCRIPT.src = '//s0.pstatp.com/cdn/expire-1-M/canvas-nest.js/2.0.4/canvas-nest.js';
+	
+	SCRIPT.src = '//cdn.jsdelivr.net/gh/ldxw/CDN@v0.02.1/scfone-theme-js/canvas-nest/2.0.4/canvas-nest.js';
     SCRIPT.opacity = '0.1';
-    SCRIPT.zIndex = '-99';
     SCRIPT.count = '10';
     LOADED(SCRIPT, callback);
     document.body.appendChild(SCRIPT);
 };
 
 const ADD_IMGAGE_BACKGROUND = () => {
-    const IMAGE = 'url(https://img12.360buyimg.com/img/jfs/t1/56992/25/15607/359235/5dc93624E8223dc25/41cac0ada12d3ad9.jpg)'
+    
+	// const IMAGE = 'url(//img12.360buyimg.com/img/jfs/t1/56992/25/15607/359235/5dc93624E8223dc25/41cac0ada12d3ad9.jpg)'
+	
+	const IMAGE = 'url(//cdn.jsdelivr.net/gh/ldxw/CDN@v0.02.1/scfone-theme-js/img/bg.jpg)'
     const DIV = document.createElement('div');
     DIV.style.background = IMAGE;
     DIV.style.pointerEvents = 'none';
@@ -65,17 +72,19 @@ const ADD_IMGAGE_BACKGROUND = () => {
 
 // 移除 README.md
 const REMOVE_README = () => {
-    const TBODY = document.querySelector('#list-table').querySelector('tbody');
-    const TRS = TBODY.querySelectorAll('tr');
-    let readme = null;
-    TRS.forEach(TR => {
-        const A = TR.querySelector('a');
-        if (A && A.href.indexOf('README.md') >= 0) {
-            readme = TR;
-            return;
-        }
-    });
-    readme ? TBODY.removeChild(readme) : null;
+    const TBODY = document.querySelector('#list-table tbody');
+    if (TBODY) {
+        const TRS = TBODY.querySelectorAll('tr');
+        let readme = null;
+        TRS.forEach(TR => {
+            const A = TR.querySelector('a');
+            if (A && A.href.indexOf('README.md') >= 0) {
+                readme = TR;
+                return;
+            }
+        });
+        readme ? TBODY.removeChild(readme) : null;
+    }
 };
 
 // 时间和 IP 居中显示，时间走动
@@ -119,7 +128,7 @@ const ADD_TIME_AND_IP = () => {
 // 其他 UI
 const CHANGE_OHTER_UI = () => {
     // 标题
-    document.head.innerHTML += FONT_PINGYONG
+    document.head.innerHTML += FONT_PINGYONG;
     const TITLE = document.body.querySelector('.title');
     TITLE.style.margin = '0';
     TITLE.style.lineHeight = '2em';
@@ -151,6 +160,20 @@ const CHANGE_OHTER_UI = () => {
         OPERATE.style.minWidth = '3em';
         OPERATE.style.textAlign = 'center';
         OPERATE.style.lineHeight = '1.3em';
+    }
+
+    // 左上角登录
+    const LOGIN = document.querySelector('a[onclick="login();"]');
+    if (LOGIN) {
+        LOGIN.style.position = 'fixed';
+        LOGIN.style.top = '5px';
+        LOGIN.style.left = '5px';
+        LOGIN.style.border = '1px #00000066 solid';
+        LOGIN.style.borderRadius = '2em';
+        LOGIN.style.background = 'white';
+        LOGIN.style.minWidth = '3em';
+        LOGIN.style.textAlign = 'center';
+        LOGIN.style.lineHeight = '1.3em';
     }
 
     // BODY
@@ -227,6 +250,15 @@ const CHANGE_OHTER_UI = () => {
     }
 };
 
+// 修复视频失效
+const FIX_VIDEO = () => {
+    const VIDEO_DIV = document.querySelector('[id^="video-a"]');
+    if (VIDEO_DIV && VIDEO_DIV.innerHTML === '') {
+        VIDEO_DIV.style.zIndex = '9999';
+        addVideos([document.querySelector('#url').value.trim()]);
+    }
+}
+
 // 主函数
 const MAIN_HANDLER = () => {
     IGNORE_EXCEPTION([
@@ -234,7 +266,8 @@ const MAIN_HANDLER = () => {
         ADD_UMBRELLA_BACKGROUND,
         CHANGE_OHTER_UI,
         REMOVE_README,
-        ADD_TIME_AND_IP
+        ADD_TIME_AND_IP,
+        FIX_VIDEO
     ]);
     document.body.removeAttribute('hidden');
 };
