@@ -198,7 +198,7 @@ ul {
 
 .Weibo_icon {
     display: inline-block;
-    background-image: url(//cdn.jsdelivr.net/gh/ldxw/CDN@v2.0.1/Noisky_files/img/V_icon_lite.png);
+    background-image: url(./img/V_icon_lite.png);
     background-repeat: no-repeat;
 }
 
@@ -217,7 +217,7 @@ ul {
 
 .Weibo_icon {
     display: inline-block;
-    background-image: url(//cdn.jsdelivr.net/gh/ldxw/CDN@v2.0.1/Noisky_files/img/feed_icon_32x28.png);
+    background-image: url(./img/feed_icon_32x28.png);
     background-repeat: no-repeat;
 }
 
@@ -259,7 +259,7 @@ hr {
     width: 100%;
     height: 100%;
     max-width: none;
-    background: url(//cdn.jsdelivr.net/gh/ldxw/CDN@v2.0.1/Noisky_files/img/background-image/bg-1.jpg) top left no-repeat #666666;
+    background: url(./img/background-image/bg-1.jpg) top left no-repeat #666666;
     background-size: cover;
 }
 

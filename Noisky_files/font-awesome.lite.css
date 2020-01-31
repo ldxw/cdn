@@ -8,7 +8,7 @@
     font-family: 'FontAwesome';
     font-weight: normal;
     font-style: normal;
-    src: url('//cdn.jsdelivr.net/gh/ldxw/CDN@v2.0.1/Noisky_files/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2')
+    src: url('../Noisky_files/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2')
 }
 
 .fa {
