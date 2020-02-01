@@ -1,3 +1,3 @@
 # jsdelivr CDN
 
-jsdelivr地址 ：https://www.jsdelivr.com/package/gh/ldxw/CDN
+[![](https://data.jsdelivr.com/v1/package/gh/ldxw/CDN/badge)](https://www.jsdelivr.com/package/gh/ldxw/CDN)
