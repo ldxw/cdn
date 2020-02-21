@@ -7,11 +7,9 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=viewport content="width=device-width,initial-scale=1">
     <meta name="keywords" content="<?php echo $n_path;?>,<?php if ($p_path!='') echo $p_path.','; echo $_SERVER['sitename'];?>,林的小窝,onedrive">
-    <!--<link rel="icon" href="<?php echo $_SERVER['base_path'];?>favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="<?php echo $_SERVER['base_path'];?>favicon.ico" type="image/x-icon" />-->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/ldxw/CDN@0.003/favicon/64x64/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ldxw/CDN@0.003/favicon/64x64/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ldxw/CDN@0.02.3/onedrive-index-theme-disk/a6pq2y.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ldxw/CDN@0.02.4/onedrive-index-theme-disk/h89of0.css" type="text/css">
 </head>
 
 <body>
@@ -165,8 +163,8 @@
                 <table class="list-table" id="list-table">
                     <tr id="tr0">
                         <th class="file" onclick="sortby('a');"><?php echo getconstStr('File'); if ($_SERVER['USER']!='qcloud') { ?>&nbsp;&nbsp;&nbsp;<button onclick="showthumbnails(this);"><?php echo getconstStr('ShowThumbnails'); ?></button><?php } ?></th>
-                        <th class="updated_at" width="25%" onclick="sortby('time');"><?php echo getconstStr('EditTime'); ?></th>
-                        <th class="size" width="15%" onclick="sortby('size');"><?php echo getconstStr('Size'); ?></th>
+                        <th class="updated_at" onclick="sortby('time');"><?php echo getconstStr('EditTime'); ?></th>
+                        <th class="size" onclick="sortby('size');"><?php echo getconstStr('Size'); ?></th>
                     </tr>
                     <!-- Dirs -->
 <?php               //echo json_encode($files['children'], JSON_PRETTY_PRINT);
