@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="dns-prefetch" href="//api.ffis.me"/>
+  <link rel="dns-prefetch" href="//static.ffis.me"/>
+  <link rel="dns-prefetch" href="//static.noisky.cn"/>
+  <link rel="dns-prefetch" href="//v1.hitokoto.cn"/>
+  <link rel="dns-prefetch" href="//hm.baidu.com"/>
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, maximum-scale=2">
+  <title>林的小窝</title>
+  <meta name="author" content="ldxw">
+  <meta name="copyright" content="ldxw"/>
+  <meta name="description" content="林的小窝"/>
+  <meta name="keywords" content="林的小窝"/>
+  <link rel="icon" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/logo/svg/logo/32x32/favicon.ico">
+  <link rel="apple-touch-icon" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/logo/svg/logo/32x32/favicon.ico">
+  <link rel="shortcut icon" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/logo/svg/logo/32x32/favicon.ico">
+  <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/font-awesome.lite.css">
+  <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/main.min.css">
+</head>
+<body>
+<!--
+作者：饭饭
+时间：2018.11.27
+描述：本项目使用 Apache License V2.0 开源许可，您可以自由的修改和使用，但请注明出处，非常感谢！
+本项目开源地址：https://github.com/noisky/Homepage
+-->
+<span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu_icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close_icon hidden"></i>
+    </span>
+<!-- 随机背景图片 -->
+<header class="panel-cover"></header>
+<!-- 必应每日背景图片
+<header class="panel-cover" style="background-image: url('https://api.ffis.me/bing/bing-images.php')"></header> -->
+<!-- 饭饭的随机背景图片api
+<header class="panel-cover" style="background-image: url('https://api.ffis.me/img/images.php')"></header> -->
+
+<div class="panel-main">
+  <div class="panel-main_inner panel-inverted">
+    <div class="panel-main_content">
+      <a href="/" title="前往 林的小窝"><img src="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/img/noisky.jpg" alt="logo"
+                                                          class="panel-cover_logo logo"></a>
+      <!--微博图标
+      <a href="#" class="Weibo_icon_position"><em title="前往饭饭的微博"
+                                                                              class="Weibo_icon Weibo_icon_logo"></em></a>-->
+      <!--国旗图标-->
+      <a href="#" class="Weibo_icon_position"><em title="庆祝新中国成立70周年" id="myAvatar"
+                                                  class="Weibo_icon Weibo_icon_logo"></em></a>
+
+      <h1 class="panel-title"><a href="/" title="link to homepage for noisky">林小窝</a></h1>
+
+      <span class="panel-subtitle" id="hitokoto">『Loading…』</span>
+
+      <hr class="panel-cover_divider">
+      
+      <p class="panel-cover_description">我们相爱了</p><img src="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/img/H5ea84ac1fcfe43e8a0b49f086896b5acs.png"style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;border: 2px solid #fff;display:inline-block;"/><i class="momo"style="color:red;font-size:20px;">❤</i><img src="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/img/H2c34dcef25624aa0b2dec3a8436854293.png"style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-left: 5px;margin-bottom: 5px;border: 2px solid #fff;display:inline-block;"/><br/><span id="htmer_time"></span></p>
+      
+      <!--<p class="panel-cover_description">欢迎来到 林的小窝<s><土木工程专业</s> 辣鸡专业，已经转行了。</p>-->
+      <hr class="panel-cover_divider panel-cover_divider-secondary">
+
+      <p class="panel-cover_description">欢迎来到 林的小窝</p>
+
+      <div class="navigation-wrapper">
+        <div>
+          <nav class="cover-navigation">
+            <ul class="navigation">
+              <li class="navigation_item"><a href="/" title="访问首页">首页</a></li>
+              <!--<li class="navigation_item"><a href="https://img.ffis.me/" target="_blank"
+                                             rel="noopener noreferrer" title="饭饭's 图床">图床</a>
+              </li>
+              <li class="navigation_item"><a href="https://music.ffis.me/" title="饭饭's 下载站">音乐盒</a></li>
+              <li class="navigation_item"><a href="https://sign.ffis.me/" title="饭饭's 签到站">签到站</a></li>
+              <li class="navigation_item"><a href="https://dl.ffis.me/" title="饭饭's 下载站">下载站</a></li>
+              <li class="navigation_item"><a href="https://ffis.me/about.html" title="关于饭饭">关于</a></li>-->
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+              <!-- Weibo
+              <li class="navigation_item">
+                <a href="http://weibo.com" title="前往微博" target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="social fa fa-weibo"></i>
+                </a>
+              </li> -->
+
+              <!-- QQ
+              <li class="navigation_item">
+                <a data-v class="wechat" href="#" title="QQ">
+                  <div data-v class="qrCode">
+                    <img data-v src="./Noisky_files/img/qq.png" width="100"
+                         onclick='window.open("./Noisky_files/img/qq.png")' alt="qq">
+                    <div data-v class="triangle-down"></div>
+                  </div>
+                  <i class="social fa fa-qq"></i>
+                </a>
+              </li> -->
+
+              <!-- Telegram -->
+              <!--<li class="navigation_item">
+                <a href="https://telegram.me/Noisky" title="Telegeam @Noisky" target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="social fa fa-telegram"></i>
+                </a>
+              </li>-->
+
+              <!-- Weixin
+              <li class="navigation_item">
+                <a data-v href="#" title="扫一扫加我微信" class="wechat">
+                  <div data-v class="qrCode">
+                    <img data-v src="./Noisky_files/img/Noisky_weixin.png" width="100"
+                         onclick='window.open("./Noisky_files/img/Noisky_weixin.png")' alt="weixin">
+                    <div data-v class="triangle-down"></div>
+                  </div>
+                  <i class="social fa fa-weixin"></i>
+                </a>
+              </li> -->
+
+              <!-- Github -->
+              <!--<li class="navigation_item">
+                <a href="https://github.com/noisky" title="Github @Noisky" target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="social fa fa-github"></i>
+                </a>
+              </li>-->
+
+              <!-- RSS -->
+              <!--<li class="navigation_item">
+                <a href="https://ffis.me/feed/" title="RSS" target="_blank" rel="noopener noreferrer">
+                  <i class="social fa fa-rss"></i>
+                </a>
+              </li>-->
+
+              <!-- Email -->
+              <!--<li class="navigation_item">
+                <a href="mailto:i@ffis.me" title="发邮件给我">
+                  <i class="social fa fa-envelope"></i>
+                </a>
+              </li>-->
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- 底部年份动态化 + 备案号 -->
+      <footer class="footer">
+        <p><!--<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002681"
+              rel="nofollow noopener noreferrer"
+              target="_blank"><img src="https://fastly.jsdelivr.net/gh/noisky/Homepage@master/Noisky_files/img/policebeian.png" alt="beian" /> 豫公网安备
+          41019702002681号</a><br />-->
+          Copyright &copy; 2025-<span class="year"></span> 林的小窝 | <a
+                    href="https://beian.miit.gov.cn/" rel="nofollow noopener noreferrer"
+                    target="_blank">豫ICP备xxxxx号-1</a></p>
+      </footer>
+    </div>
+  </div>
+  <div class="panel-cover--overlay cover-slate"></div>
+</div>
+
+<!--我们相爱了
+<script type="text/javascript"language="javascript">function setTime(){var create_time=Math.round(new Date(Date.UTC(2019,11,5,00,00,0)).getTime()/1000);var timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);currentTime=secondToDate((timestamp-create_time));currentTimeHtml=currentTime[0]+' 年 '+currentTime[1]+' 天 '+currentTime[2]+' 时 '+currentTime[3]+' 分 '+currentTime[4]+' 秒';document.getElementById("htmer_time").innerHTML=currentTimeHtml}function secondToDate(second){if(!second){return 0}var time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600}if(second>=3600){time[2]=parseInt(second/3600);second%=3600}if(second>=60){time[3]=parseInt(second/60);second%=60}if(second>0){time[4]=second}return time}setInterval(setTime,1000);</script>-->
+<script>function setTime(){const createDate=new Date(2019,10,5,0,0,0);const createTime=Math.round(createDate.getTime()/1000);const now=new Date();const timestamp=Math.round(now.getTime()/1000);const timeDiff=timestamp-createTime;const currentTime=secondToDate(timeDiff);const currentTimeHtml=currentTime[0]+' 年 '+currentTime[1]+' 天 '+currentTime[2]+' 时 '+currentTime[3]+' 分 '+currentTime[4]+' 秒';const element=document.getElementById("htmer_time");if(element){element.innerHTML=currentTimeHtml;}}function secondToDate(second){if(!second||second<0){return[0,0,0,0,0];}let time=[0,0,0,0,0];const SECONDS_IN_YEAR=365*24*3600;const SECONDS_IN_DAY=24*3600;const SECONDS_IN_HOUR=3600;const SECONDS_IN_MINUTE=60;if(second>=SECONDS_IN_YEAR){time[0]=Math.floor(second/SECONDS_IN_YEAR);second%=SECONDS_IN_YEAR;}if(second>=SECONDS_IN_DAY){time[1]=Math.floor(second/SECONDS_IN_DAY);second%=SECONDS_IN_DAY;}if(second>=SECONDS_IN_HOUR){time[2]=Math.floor(second/SECONDS_IN_HOUR);second%=SECONDS_IN_HOUR;}if(second>=SECONDS_IN_MINUTE){time[3]=Math.floor(second/SECONDS_IN_MINUTE);second%=SECONDS_IN_MINUTE;}time[4]=second;return time;}document.addEventListener('DOMContentLoaded',function(){setTime();setInterval(setTime,1000);});</script>
+<!--我们相爱了-->
+
+<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/jquery-3.5.0.min.js"></script>
+<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Homepage/Noisky_files/main.min.js"></script>
+<script src="//v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<!-- 统计代码 -->
+</body>
+</html>

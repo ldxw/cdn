@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认主页</title>
+    <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Home-Page/css/style.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="profile-card">
+        <div class="avatar-container">
+            <img src="https://gcore.jsdelivr.net/gh/ldxw/cdn/@master/static/Home-Page/avatar.jpg" alt="个人头像" class="avatar">
+        </div>
+        <h1 class="name">默认主页</h1>
+        <!--<p class="bio">飞舞开发者 | 台球爱好者 | 开源灌水者</p>
+        <div class="social-links">
+            <a href="https://kj.ldxw.de" target="_blank" class="social-link" data-hover-text="前往小窝主机">
+                <i class="fab fa-xiaowoidc"></i>
+                <span>小窝主机</span>
+            </a>
+            <a href="https://ucany.net" target="_blank" class="social-link" data-hover-text="前往站长的博客">
+                <i class="fas fa-blog"></i>
+                <span>站长博客</span>
+            </a>
+            <a href="#" class="social-link contact-trigger" data-hover-text="发送消息给站长">
+                <i class="fas fa-envelope"></i>
+                <span>联系方式</span>
+            </a>-->
+        </div>
+    </header>
+    <!--<div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>📬 联系站长</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> 邮箱：langfordkuo@foxmail.com</p>
+                <p><i class="fab fa-qq"></i> QQ：1244486871</p>
+            </div>
+        </div>
+    </div>-->
+<script>
+document.querySelector('.contact-trigger').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.modal-overlay').classList.add('active');
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+    document.querySelector('.modal-overlay').classList.remove('active');
+});
+
+document.querySelector('.modal-overlay').addEventListener('click', (e) => {
+    if (e.target === document.querySelector('.modal-overlay')) {
+        document.querySelector('.modal-overlay').classList.remove('active');
+    }
+});
+</script>
+<center><footer class="site-footer">
+    © 2025 默认主页
+</footer></center>
+</body>
+</html>

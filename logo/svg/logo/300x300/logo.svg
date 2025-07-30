@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="300px" version="1.1" width="300px" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: transparent;">
+  <defs>
+    <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0.0" stop-color="#5D26C1" />
+      <stop offset="0.5" stop-color="#00C6FF" />
+      <stop offset="1.0" stop-color="#00FFB7" />
+    </linearGradient>
+    <style type="text/css">
+      .ultra-smooth {
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        shape-rendering: geometricPrecision;
+        stroke-miterlimit: 20;
+      }
+    </style>
+  </defs>
+  
+  <circle cx="150" cy="150" fill="none" r="140" stroke="url(#grad1)" stroke-width="10" shape-rendering="geometricPrecision" />
+  
+  <g transform="translate(150,135) scale(1.35) translate(-150,-150)" shape-rendering="geometricPrecision">
+    <path d="M 95 145 L 145 95 Q 150 85, 155 95 L 205 145" 
+          class="ultra-smooth" fill="none" stroke="url(#grad1)" stroke-width="7" />
+    <rect fill="none" height="65" rx="10" ry="10" width="110" x="95" y="145" class="ultra-smooth" stroke="url(#grad1)" stroke-width="6" />
+    <path d="M150,162 C145,154 135,154 135,162 C135,175 150,187 150,187 C150,187 165,175 165,162 C165,154 155,154 150,162 Z" fill="url(#grad1)" stroke="url(#grad1)" stroke-width="3" />
+  </g>
+</svg>

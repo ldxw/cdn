@@ -1,0 +1,761 @@
+* {
+    font-family: "Segoe UI", 'Open Sans', sans-serif;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+
+body {
+    background-color: #e0e6e9 !important;
+    padding: 1.2%;
+}
+
+.tmail-container {
+    background-color: #fff;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.tmail-container .row {
+    height: 100%;
+}
+
+.tmail-container .row .col-lg-12 {
+    height: 100%;
+}
+
+.tmail-header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 100px;
+    background: #673ae2;
+}
+
+.tmail-footer {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 80px;
+    background: #06b4fe;
+}
+
+.tmail-mobile-menu {
+    display: none;
+}
+
+.tmail-logo {
+    padding: 20px 40px;
+    float: left;
+}
+
+.tmail-language-switcher {
+    float: right;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.tmail-language-switcher select {
+    margin: 24% 0px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.tmail-divider {
+    background: #673ae2;
+}
+
+/* TMail Loader Screen */
+
+.tmail-main .tmail-loader {
+    overflow: hidden !important;
+}
+
+.tmail-main .tmail-loader .inner-loader {
+    width: 100%;
+    margin: auto;
+    display: block;
+    height: 100%;
+    padding: 15% 0 0 50px;
+    font-size: 34px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden !important;
+}
+
+.tmail-main .tmail-loader .inner-loader .lds-ellipsis {
+    margin-left: 48.3%;
+}
+
+/* TMail HomePage CSS */
+
+.tmail-main {
+    height: calc(100% - 180px);
+    background: #673ae2;
+    background: -moz-linear-gradient(top, #673ae2 0%, #3160e4 99%); 
+    background: -webkit-linear-gradient(top, #673ae2 0%,#3160e4 99%); 
+    background: linear-gradient(to bottom, #673ae2 0%,#3160e4 99%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#673ae2', endColorstr='#3160e4',GradientType=0 ); 
+}
+
+.tmail-main-inner {
+    display: none;
+}
+
+.tmail-main .row {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.tmail-main-inner {
+    width: 100%;
+    color: #fff;
+    margin-top: 5%;
+}
+
+.tmail-input-set-email {
+    color: #fff;
+}
+
+.tmail-input-set-email {
+    width: 700px;
+    max-width: 90%;
+}
+
+.tmail-input-set-email {
+    margin: 50px 0px;
+    padding: 10px 20px;
+    border: none;
+    font-weight: 300;
+    font-size: 24px;
+    color: #431bb0;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.tmail-input-set-domain {
+    margin: 50px 0px;
+    border: none;
+    font-weight: 300;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+select:focus, select:focus {
+    box-shadow: none;
+    border: none;
+}
+
+select.tmail-input-set-domain {
+    padding: 10px 20px;
+    padding-right: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #431bb0;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='31' viewBox='4 2 29 15' width='31' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 10px;
+    color: #fff;
+}
+
+.tmail-main-inner span {
+    padding: 0px 10px;
+    font-size: 48px;
+    font-weight: lighter;
+}
+
+.tmail-generate-random i, .tmail-generate-custom i {
+    padding-right: 10px;
+}
+
+.tmail-generate-random a, .tmail-generate-custom a {
+    background: #fff;
+    padding: 10px 25px;
+    line-height: 21px;
+    font-size: 21px;
+    border-radius: 4px;
+    font-weight: lighter;
+}
+
+.tmail-generate-custom a {
+    background: #431bb0;
+    width: 200px;
+    color: #fff;
+}
+
+.tmail-generate-custom a:hover {
+    color: #fff;
+}
+
+.tmail-generate-custom {
+    margin-bottom: 50px;
+}
+
+.tmail-generate-random a {
+    background: #06b4fe;
+    width: 230px;
+    color: #fff;
+}
+
+.tmail-generate-random a:hover {
+    color: #fff;
+}
+
+.tmail-generate-random {
+    margin: 50px 0px;
+}
+
+/* TMail Body CSS */
+
+.tmail-body {
+    height: calc(100% - 180px);
+    display: none;
+}
+
+.tmail-body .row {
+    height: 100%;
+}
+
+.tmail-sidebar {
+    border-right: 1px solid #eee;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+ul.tmail-main-menu {
+    list-style-type: none;
+}
+
+ul.tmail-main-menu li {
+    padding: 15px 40px;
+    color: #52586c;
+    cursor: pointer;
+}
+
+ul.tmail-main-menu a {
+    color: #52586c;
+    text-decoration: none !important;
+}
+
+ul.tmail-main-menu li.active {
+    background: #eee;
+}
+
+ul.tmail-main-menu li:hover {
+    background: #5a47d1;
+    color: #fff;
+}
+
+ul.tmail-main-menu li:hover a {
+    color: #fff;
+}
+
+ul.tmail-main-menu li i {
+    width: 15%;
+}
+
+ul.tmail-main-menu li span {
+    width: 85%;
+}
+
+.menu-title {
+    padding: 15px 40px;
+    margin: 20px 0px 10px 0px;
+    font-weight: bold;
+}
+
+.tmail-list {
+    border-right: 1px solid #eee;
+    height: 100%;
+    padding: 0px;
+    overflow-y: scroll;
+    transition: display 2s;
+}
+
+.tmail-compose {
+    padding: 15px 20px;
+    margin: 40px;
+    text-align: center;
+    background: #00b8ff;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.tmail-search-input, .tmail-current-id {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.tmail-current-id {
+    background: #fcc747;
+    padding: 20px 10px;
+    cursor: copy;
+}
+
+.tmail-current-id-icon {
+    width: 40px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.tmail-current-id-info {
+    margin-left: 10px;
+}
+
+#current-tmail-id {
+    font-size: 16px;
+}
+
+.tmail-current-id-info-text {
+    font-size: 12px;
+}
+
+#reloading-line {
+    padding-right: 15px;
+    display: none;
+}
+
+#reloading-line i {
+    font-size: 36px;
+}
+
+#reloading-msg {
+    line-height: 42px;
+    font-size: 14px;
+}
+
+.tmail-search-input .input-group-prepend {
+    border-radius: 0px;
+    border: none;
+}
+
+.tmail-search-input .input-group-text, .tmail-current-id .input-group-text {
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+}
+
+.tmail-search-input #tmail-search {
+    border-radius: 0px;
+    border: none;
+}
+
+.tmail-search-input #tmail-search:focus {
+    box-shadow: none;
+}
+
+ul.tmail-list-ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+ul.tmail-list-ul li {
+    padding: 20px;
+    cursor: pointer;
+}
+
+ul.tmail-list-ul li.tmail-list-active {
+    background: #f1f1f1;
+}
+
+ul.tmail-list-ul li:hover {
+    background: #f9f9f9;
+}
+
+ul.tmail-list-ul li .name {
+    float: left;
+    color: #a0aabe;
+    font-weight: bold;
+}
+
+ul.tmail-list-ul li .date {
+    float: right;
+    font-weight: bold;
+    color: #a0aabe;
+}
+
+ul.tmail-list-ul li .subject {
+    font-weight: bold;
+    color: #52586c;
+    margin-bottom: 10px;
+    height: 24px;
+    overflow: hidden; 
+}
+
+
+ul.tmail-list-ul li .body {
+    color: #777e8e;
+    height: 48px;
+    overflow: hidden;
+}
+
+.tmail-email-body {
+    padding: 50px !important;
+    border-bottom-right-radius: 4px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.tmail-email-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #06b4fe;
+}
+
+.tmail-email-body-content {
+    color: #777e8e;
+    margin-top: 50px;
+}
+
+.tmail-email-attachments {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid #ccc;
+    padding: 40px 0;
+}
+
+.tmail-email-attachments a {
+    padding: 10px 20px;
+    border: 1px solid #673AE2;
+    color: #673AE2;
+}
+
+.tmail-email-attachments a:hover {
+    background: #673AE2;
+    color: #fff;
+}
+
+.tmail-email-attachments a i {
+    padding-right: 5px;
+}
+
+.tmail-list-placeholder {
+    line-height: 50vh;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.1;
+    font-size: 24px;
+}
+
+.tmail-email-body-placeholder {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.tmail-email-body-placeholder span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.1;
+    text-align: center;
+}
+
+.tmail-email-description {
+    font-size: 14px;
+}
+
+.tmail-email-time {
+    color: #222;
+}
+
+.tmail-email-response {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 50px 0px;
+}
+
+.tmail-email-response textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    font-size: 16px;
+    display: block;
+    height: 200px;
+}
+
+.tmail-email-response a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #5a47d1;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.tmail-list-clear button {
+    margin: 18px 20px 20px 0px;
+    width: 150px;
+    max-width: 100%;
+    padding: 10px 0px 12px 0px;
+    border-radius: 4px;
+    background: #ea3b3b;
+    color: #fff;
+    border: none;
+}
+
+.tmail-switch button {
+    margin: 18px 20px 20px 20px;
+    width: 200px;
+    max-width: 100%;
+    padding: 10px 0px 12px 0px;
+    border-radius: 4px;
+    background: #0177a9;
+    color: #fff;
+    border: none;
+}
+
+.tmail-switch button:focus {
+    box-shadow: none;
+}
+
+.tmail-switch ul {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+}
+
+.tmail-switch ul li:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-top: 20px;
+}
+
+.tmail-switch ul li:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-bottom: 20px;
+}
+
+.tmail-switch ul li {
+    padding: 15px 25px;
+    background: #5a47d1;
+    color: #fff;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.tmail-switch ul li.dropdown-create-menu {
+    background: #94c314;
+}
+
+.tmail-switch ul li a {
+    color: #fff;
+}
+
+.tmail-icons a {
+    margin-right: 10px;
+    font-size: 36px;
+    color: #fff;
+    position: relative;
+    padding-right: 40px;
+}
+
+.tmail-icons a i {
+    position: absolute;
+    top: 40%;
+}
+
+.tmail-ads * {
+    max-width: 100%;
+}
+
+.tmail-ads {
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.tmail-email-content-li {
+    display: none;
+}
+
+.tmail-body-delete-download-icons div {
+    font-size: 18px;
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.tmail-body-download-icon {
+    color: #673ae2;
+}
+
+.tmail-body-delete-icon {
+    margin-top: -1px;
+    color: #bc0808;
+} 
+
+@media only screen and (max-width: 1000px) {
+    body {
+        padding: 10px;
+    }
+    .tmail-mobile-menu {
+        font-size: 30px;
+        padding: 22px 10px 22px 30px;
+        color: #fff;
+        float: left;
+        cursor: pointer;
+        width: 60px;
+    }
+    .tmail-mobile-menu i.fa-times,
+    .tmail-mobile-menu i.fa-chevron-left {
+        display: none;
+    }
+    .tmail-logo {
+        padding: 20px 10px;
+    }
+    .setEmail {
+        width: 50%;
+    }
+    .tmail-main-inner {
+        margin-top: 30px;
+    }
+    select.tmail-input-set-domain {
+        margin: 0px 0px 10px 0px; 
+    }
+    .tmail-input-set-email,
+    .tmail-input-set-domain {
+        padding: 10px 20px;
+        font-size: 24px;
+    }
+    .tmail-language-switcher select {
+        font-size: 12px;
+        margin: 30px 0;
+    }
+    .tmail-input-set-email {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    .tmail-input-set-domain {
+        width: 90%;
+        font-size: 18px;
+    }
+    .tmail-generate-random a, .tmail-generate-custom a {
+        width: 90%;
+        font-size: 18px;
+        display: block;
+    }
+    .tmail-email-body {
+        z-index: -1;
+    }
+}
+
+/* CSS Loader */
+
+.lds-ellipsis {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(19px, 0);
+    }
+}
+
+/* Custom SnackBar */
+
+#snackbar {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    border-radius: 4px;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 1;
+    right: 30px;
+    bottom: 30px;
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

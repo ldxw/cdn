@@ -1,0 +1,30 @@
+
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for ring and text stroke -->
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A00E0"/>
+      <stop offset="50%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#00FFA3"/>
+    </linearGradient>
+
+    <!-- Enhanced shadow for visibility -->
+    <filter id="enhancedShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00d4ff" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <!-- Unified group -->
+  <g transform="translate(150,150)">
+    <!-- Gradient circle -->
+    <circle cx="0" cy="0" r="130" stroke="url(#ringGradient)" stroke-width="10" fill="none" />
+
+    <!-- Text with Noto Sans SC font -->
+    <text x="0" y="25" text-anchor="middle"
+          font-size="90" font-family="Noto Sans SC, sans-serif" font-weight="bold"
+          fill="white" stroke="url(#ringGradient)" stroke-width="4"
+          filter="url(#enhancedShadow)">
+      小窝
+    </text>
+  </g>
+</svg>

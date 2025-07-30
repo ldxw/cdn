@@ -1,0 +1,562 @@
+/* 
+    Created on : 20 May, 2017, 12:58:19 PM
+    Author     : Harshit
+*/
+
+* {
+    font-family: "Segoe UI", 'Lato', sans-serif;;
+}
+
+#generateID {
+    display: none;
+}
+
+.setEmailDiv {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.at {
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.breakicon {
+    margin: 40px 0px;
+    padding-right: 7px;
+}
+
+.icon {
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0px 5px 0px 10px;
+}
+
+.header {
+    height: 100px;
+}
+
+#logo {
+    float: left;
+    margin: 50px 0px;
+    cursor: pointer;
+}
+
+#logo img {
+    max-height: 40px;
+}
+
+.setLang {
+    float: right;
+    margin: 50px 0px;
+    border: none;
+    font-weight: 300;
+    font-size: 21px;
+    border-bottom: 1px solid #000;
+    padding: 0px 30px 0px 10px;
+}
+
+#aboutus {
+    display: none;
+}
+
+.aboutus p {
+    font-size: 18px;
+}
+
+#closeIcon {
+    float: right;
+    margin: 35px 0px;
+    font-weight: 300;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+.setEmail, .setDomain {
+    margin: 50px 0px;
+    border: none;
+    font-weight: 300;
+    font-size: 28px;
+    border-bottom: 1px solid #000;
+}
+
+@media (min-width:961px)  { 
+    .setEmail {
+        width: 50%;
+    }
+}
+
+.setDomain {
+    padding: 0px 30px 0px 10px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 10px;
+}
+
+.title {
+    font-weight: 300;
+    font-size: 28px;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+#createline, #createdline, #data {
+    display: none;
+}
+
+.message {
+    text-align: center;
+    margin-top: 50px;
+    display: none;
+}
+
+.downloadButton {
+    float: right;
+    margin-left: 10px;
+    background-color: #777 !important;
+    border-color: #333333 !important;
+    margin-top: -8px;
+}
+
+.deleteButton {
+    float: right;
+    margin-left: 10px;
+    background-color: #333 !important;
+    border-color: #000 !important;
+    margin-top: -8px;
+}
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px 24px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    margin-top: -15px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0px 24px;
+    padding-top: 15px;
+    background-color: #f6f6f6;
+    max-height: 50px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+div.panel > p {
+    margin-top: -62px;
+}
+
+.tmail-email-attachments {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid #ccc;
+    padding: 40px 0;
+}
+
+.tmail-email-attachments a {
+    text-decoration: none !important;
+    padding: 10px 20px;
+    border: 1px solid #111;
+    color: #111;
+}
+
+.tmail-email-attachments a:hover {
+    background: #111;
+    color: #fff;
+}
+
+.tmail-email-attachments a i {
+    padding-right: 5px;
+}
+
+/* Search Bar */
+
+#search-bar-container{
+    position:relative;
+    display:none
+}
+
+#search-bar-container:after{
+    content:'\e003';
+    font-family:Glyphicons Halflings;
+    width:18px;
+    height:18px;
+    position:absolute;
+    right:19px;
+    bottom:19px;
+    color:#fff
+}
+
+#search-bar-container #search-bar{
+    display:block;
+    margin:20px auto;
+    width:100%;
+    padding:15px 20px;
+    border:none;
+    border-radius:5px;
+    outline:0;
+    background:#555;
+    color:#fff
+}
+
+/* Action Bar */
+
+.action-button i, .action-list-button i{
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.action-switch-email{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.action-button {
+    background: #DB4437;
+}
+
+.action-list-button {
+    background: #333333;
+}
+
+.action-button, .action-list-button {
+    position: relative;
+    color: #fff;
+}
+
+.action-switch-email:hover .action-button i {
+    transform: rotate(360deg);
+}
+
+.action-button {
+    width: 75px;
+    height: 75px;
+    border-radius: 37.5px;
+}
+
+.action-button i {
+    display: inline-block;
+    font-size: 30px;
+    line-height: 75px;
+    color: #fff;
+    width: 75px;
+    height: 75px;
+    transition: all .3s;
+}
+
+.action-list-button {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto 20%;
+    border-radius: 25px;
+}
+
+.action-list-button i {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 50px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.action-list {
+    display: none;
+}
+
+.action-switch-email:hover .action-list:hover {
+    display: block;
+}
+
+.action-button .action-info, .action-list-button .action-info {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 25%;
+    right: 125%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.action-button .action-info {
+    width: 120px;
+}
+
+.action-list-button .action-info {
+    bottom: 15%;
+    font-size: 14px;
+}
+
+.action-button:hover .action-info, .action-list-button:hover .action-info {
+    visibility: visible;
+    opacity: 1;
+}
+
+.saveEMails {
+    background: #9c0;
+    cursor: pointer;
+}
+
+.clearEMails {
+    background: #DB4437;
+    cursor: pointer;
+}
+
+.addEMail {
+    background: #1E90FF;
+}
+
+.action-list a {
+    cursor: pointer;
+}
+
+.menu {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.menu ul {
+    padding-left: 0;
+}
+
+.menu a {
+    color: #222;
+    padding: 10px;
+}
+
+.menu a:hover {
+    color: #444;
+}
+
+.menu li {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+}
+
+@media only screen and (max-width:500px) {
+    .action-list-button .action-info {
+        visibility:visible;
+        opacity:1
+    }
+}
+
+
+/* CSS Loader */
+
+.cssload-container * {
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.cssload-container {
+    margin: 17px auto 0 auto;
+    max-width: 489px;
+}
+.cssload-container ul li {
+    list-style: none;
+}
+.cssload-flex-container {
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -o-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cssload-flex-container li {
+    padding: 9px;
+    height: 87px;
+    width: 87px;
+    margin: 26px 17px 26px -20px;
+    position: relative;
+    text-align: center;
+}
+.cssload-loading,
+.cssload-loading:after,
+.cssload-loading:before {
+    display: inline-block;
+    position: relative;
+    width: 4px;
+    height: 44px;
+    background: rgb(0, 0, 0);
+    margin-top: 4px;
+    border-radius: 875px;
+    -o-border-radius: 875px;
+    -ms-border-radius: 875px;
+    -webkit-border-radius: 875px;
+    -moz-border-radius: 875px;
+    animation: cssload-upDown2 0.9s ease infinite;
+    -o-animation: cssload-upDown2 0.9s ease infinite;
+    -ms-animation: cssload-upDown2 0.9s ease infinite;
+    -webkit-animation: cssload-upDown2 0.9s ease infinite;
+    -moz-animation: cssload-upDown2 0.9s ease infinite;
+    animation-direction: alternate;
+    -o-animation-direction: alternate;
+    -ms-animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-delay: 0.2225s;
+    -o-animation-delay: 0.2225s;
+    -ms-animation-delay: 0.2225s;
+    -webkit-animation-delay: 0.2225s;
+    -moz-animation-delay: 0.2225s;
+}
+.cssload-loading:after,
+.cssload-loading:before {
+    position: absolute;
+    content: '';
+    animation: cssload-upDown 0.9s ease infinite;
+    -o-animation: cssload-upDown 0.9s ease infinite;
+    -ms-animation: cssload-upDown 0.9s ease infinite;
+    -webkit-animation: cssload-upDown 0.9s ease infinite;
+    -moz-animation: cssload-upDown 0.9s ease infinite;
+    animation-direction: alternate;
+    -o-animation-direction: alternate;
+    -ms-animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+}
+.cssload-loading:before {
+    left: -9px;
+}
+.cssload-loading:after {
+    left: 9px;
+    animation-delay: 0.445s;
+    -o-animation-delay: 0.445s;
+    -ms-animation-delay: 0.445s;
+    -webkit-animation-delay: 0.445s;
+    -moz-animation-delay: 0.445s;
+}
+@keyframes cssload-upDown {
+    from {
+        transform: translateY(17px);
+    }
+    to {
+        transform: translateY(-17px);
+    }
+}
+@-o-keyframes cssload-upDown {
+    from {
+        -o-transform: translateY(17px);
+    }
+    to {
+        -o-transform: translateY(-17px);
+    }
+}
+@-ms-keyframes cssload-upDown {
+    from {
+        -ms-transform: translateY(17px);
+    }
+    to {
+        -ms-transform: translateY(-17px);
+    }
+}
+@-webkit-keyframes cssload-upDown {
+    from {
+        -webkit-transform: translateY(17px);
+    }
+    to {
+        -webkit-transform: translateY(-17px);
+    }
+}
+@-moz-keyframes cssload-upDown {
+    from {
+        -moz-transform: translateY(17px);
+    }
+    to {
+        -moz-transform: translateY(-17px);
+    }
+}
+@keyframes cssload-upDown2 {
+    from {
+        transform: translateY(26px);
+    }
+    to {
+        transform: translateY(-17px);
+    }
+}
+@-o-keyframes cssload-upDown2 {
+    from {
+        -o-transform: translateY(26px);
+    }
+    to {
+        -o-transform: translateY(-17px);
+    }
+}
+@-ms-keyframes cssload-upDown2 {
+    from {
+        -ms-transform: translateY(26px);
+    }
+    to {
+        -ms-transform: translateY(-17px);
+    }
+}
+@-webkit-keyframes cssload-upDown2 {
+    from {
+        -webkit-transform: translateY(26px);
+    }
+    to {
+        -webkit-transform: translateY(-17px);
+    }
+}
+@-moz-keyframes cssload-upDown2 {
+    from {
+        -moz-transform: translateY(26px);
+    }
+    to {
+        -moz-transform: translateY(-17px);
+    }
+}
