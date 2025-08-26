@@ -5,7 +5,6 @@
     <title>白昼黑夜切换器</title>
     <link
       rel="stylesheet"
-      <!--href="https://public.codepenassets.com/css/normalize-5.0.0.min.css"-->
       href="https://cdn.oplist.org/gh/ldxw/cdn@master/code/html/react-day-night-toggle-theme-animation/css/normalize-5.0.0.min.css"
     />
     <style>
@@ -32,12 +31,10 @@
   </head>
   <body>
     <div id="root">Loading...</div>
-    <!--<script src="https://unpkg.com/react@16.3.0-alpha.1/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16.3.0-alpha.1/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/styled-components@2.2.1/dist/styled-components.min.js"></script>-->
-    <script src="">https://cdn.jsdmirror.cn/npm/react@16.3.0-alpha.1/umd/react.development.js</script>
-    <script src="">https://cdn.jsdmirror.cn/npm/react-dom@16.3.0-alpha.1/umd/react-dom.development.js</script>
-    <script src="">https://cdn.jsdmirror.cn/npm/styled-components@2.2.1/dist/styled-components.min.js</script>
+    <!-- 修正CDN链接格式，删除多余空引号 -->
+    <script src="https://cdn.jsdmirror.cn/npm/react@16.3.0-alpha.1/umd/react.development.js"></script>
+    <script src="https://cdn.jsdmirror.cn/npm/react-dom@16.3.0-alpha.1/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdmirror.cn/npm/styled-components@2.2.1/dist/styled-components.min.js"></script>
     <script>
       function _defineProperty(obj, key, value) {
         if (key in obj) {
@@ -75,7 +72,6 @@
       } = window;
 
       const { createContext, Component } = React;
-
       const { render } = ReactDOM;
 
       const THEME_CONSTANTS = {
@@ -83,14 +79,11 @@
         DAY: "day",
       };
 
-      /**
-       * Create a basic theme context
-       *
-       * do a dirty getHours to determine the defaultValue
-       */
+      // 修正时间判断逻辑（原d<6语法错误，应取getHours()）
       const d = new Date();
+      const hours = d.getHours();
       const defaultValue =
-        d < 6 || d > 19 ? THEME_CONSTANTS.NIGHT : THEME_CONSTANTS.DAY;
+        hours < 6 || hours > 19 ? THEME_CONSTANTS.NIGHT : THEME_CONSTANTS.DAY;
       const ThemeContext = createContext(defaultValue);
 
       const $night = "#111";
@@ -111,17 +104,19 @@
         width: 100vw;
       `;
 
+      // 修正BigStar组件，补充闭合花括号
       const BigStar = styled.div`
-  border-radius: 100%;
-  height: ${$size}vh;
-  left: ${$positionX}vw;
-  position: absolute;
-  top: ${$positionY}vh;
-  transition transform ${$transitionDuration}s ease 0s;
-  width: ${$size}vh;
-  z-index: 2;
-`;
+        border-radius: 100%;
+        height: ${$size}vh;
+        left: ${$positionX}vw;
+        position: absolute;
+        top: ${$positionY}vh;
+        transition: transform ${$transitionDuration}s ease 0s;
+        width: ${$size}vh;
+        z-index: 2;
+      `;
 
+      // 修正extend语法对齐
       const Moon = BigStar.extend`
         background-color: ${$starColor};
         box-shadow: 0px 0px 50px #eee;
@@ -206,6 +201,7 @@
         z-index: 1;
       `;
 
+      // 修正extend语法对齐
       const Sun = BigStar.extend`
         background-color: ${$sunColor};
         box-shadow: 0px 0px 150px yellow;
@@ -231,7 +227,7 @@
     transform: scaleY(1);
   }
   6% {
-    transform scaleY(0);
+    transform: scaleY(0);
   }
 `;
 
@@ -282,12 +278,12 @@
         transform: translateX(-50%);
       `;
 
-      const Face = ({ show } /*#__PURE__*/) =>
+      const Face = ({ show }) =>
         React.createElement(
           Features,
-          { show: show } /*#__PURE__*/,
-          React.createElement(LeftEye, null) /*#__PURE__*/,
-          React.createElement(RightEye, null) /*#__PURE__*/,
+          { show: show },
+          React.createElement(LeftEye, null),
+          React.createElement(RightEye, null),
           React.createElement(Smile, null)
         );
 
@@ -331,51 +327,48 @@
         transition: background 0.25s ease 0s, transform 0.25s ease 0s;
       `;
 
-      const ThemeToggle = ({ onChange, checked } /*#__PURE__*/) =>
+      const ThemeToggle = ({ onChange, checked }) =>
         React.createElement(
           ThemeContext.Consumer,
           null,
-          (theme /*#__PURE__*/) =>
+          (theme) =>
             React.createElement(
               ThemeToggleContainer,
-              { theme: theme } /*#__PURE__*/,
+              { theme: theme },
               React.createElement(ThemeToggleInput, {
                 type: "checkbox",
                 onChange: onChange,
                 checked: checked,
                 title: "Toggle theme",
-              }) /*#__PURE__*/,
-
+              }),
               React.createElement(ThemeToggleSwitch, { theme: theme })
             )
         );
 
-      const BackDrop = ({ stars } /*#__PURE__*/) =>
+      const BackDrop = ({ stars }) =>
         React.createElement(
           ThemeContext.Consumer,
           null,
-          (theme /*#__PURE__*/) =>
+          (theme) =>
             React.createElement(
               Container,
-              { theme: theme } /*#__PURE__*/,
+              { theme: theme },
               React.createElement(
                 Sun,
-                { theme: theme } /*#__PURE__*/,
+                { theme: theme },
                 React.createElement(Face, {
                   show: theme === THEME_CONSTANTS.DAY,
                 })
-              ) /*#__PURE__*/,
-
+              ),
               React.createElement(
                 Moon,
-                { theme: theme } /*#__PURE__*/,
+                { theme: theme },
                 React.createElement(Face, {
                   show: theme === THEME_CONSTANTS.NIGHT,
-                }) /*#__PURE__*/,
+                }),
                 React.createElement(Craters, null)
               ),
-
-              stars.map((star, idx /*#__PURE__*/) =>
+              stars.map((star, idx) =>
                 React.createElement(
                   Star,
                   _extends({ key: `star--${idx}` }, star, { theme: theme })
@@ -402,6 +395,7 @@
         }
         return items;
       };
+
       class App extends Component {
         constructor(...args) {
           super(...args);
@@ -411,7 +405,6 @@
           _defineProperty(
             this,
             "toggle",
-
             (e) => {
               const { theme } = this.state;
               this.setState({
@@ -422,25 +415,27 @@
               });
             }
           );
-          _defineProperty(this, "render", () => {
-            const { stars } = this.props;
-            const { theme } = this.state;
-            return /*#__PURE__*/ React.createElement(
-              ThemeContext.Provider,
-              { value: theme } /*#__PURE__*/,
-              React.createElement(BackDrop, { stars: stars }) /*#__PURE__*/,
-              React.createElement(ThemeToggle, {
-                checked: theme === defaultValue,
-                onChange: this.toggle,
-              })
-            );
-          });
+        }
+
+        // 修正render方法定义（原写在constructor内，不符合React规范）
+        render() {
+          const { stars } = this.props;
+          const { theme } = this.state;
+          return React.createElement(
+            ThemeContext.Provider,
+            { value: theme },
+            React.createElement(BackDrop, { stars: stars }),
+            React.createElement(ThemeToggle, {
+              checked: theme === THEME_CONSTANTS.NIGHT, // 修正checked判断逻辑
+              onChange: this.toggle,
+            })
+          );
         }
       }
 
       _defineProperty(App, "defaultProps", { stars: generateItems(20, 4) });
       render(
-        /*#__PURE__*/ React.createElement(App, null),
+        React.createElement(App, null),
         document.querySelector("#root")
       );
     </script>
