@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>白昼黑夜切换器</title>
+    <link
+      rel="stylesheet"
+      <!--href="https://public.codepenassets.com/css/normalize-5.0.0.min.css"-->
+      href="https://cdn.oplist.org/gh/ldxw/cdn@master/code/html/react-day-night-toggle-theme-animation/css/normalize-5.0.0.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: #7ec0ee;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-family: "Gloria Hallelujah", cursive;
+        font-weight: bold;
+        color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">Loading...</div>
+    <!--<script src="https://unpkg.com/react@16.3.0-alpha.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.3.0-alpha.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/styled-components@2.2.1/dist/styled-components.min.js"></script>-->
+    <script src="">https://cdn.jsdmirror.cn/npm/react@16.3.0-alpha.1/umd/react.development.js</script>
+    <script src="">https://cdn.jsdmirror.cn/npm/react-dom@16.3.0-alpha.1/umd/react-dom.development.js</script>
+    <script src="">https://cdn.jsdmirror.cn/npm/styled-components@2.2.1/dist/styled-components.min.js</script>
+    <script>
+      function _defineProperty(obj, key, value) {
+        if (key in obj) {
+          Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true,
+          });
+        } else {
+          obj[key] = value;
+        }
+        return obj;
+      }
+      function _extends() {
+        _extends =
+          Object.assign ||
+          function (target) {
+            for (var i = 1; i < arguments.length; i++) {
+              var source = arguments[i];
+              for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                  target[key] = source[key];
+                }
+              }
+            }
+            return target;
+          };
+        return _extends.apply(this, arguments);
+      }
+      const {
+        React,
+        ReactDOM,
+        styled: { default: styled, keyframes },
+      } = window;
+
+      const { createContext, Component } = React;
+
+      const { render } = ReactDOM;
+
+      const THEME_CONSTANTS = {
+        NIGHT: "night",
+        DAY: "day",
+      };
+
+      /**
+       * Create a basic theme context
+       *
+       * do a dirty getHours to determine the defaultValue
+       */
+      const d = new Date();
+      const defaultValue =
+        d < 6 || d > 19 ? THEME_CONSTANTS.NIGHT : THEME_CONSTANTS.DAY;
+      const ThemeContext = createContext(defaultValue);
+
+      const $night = "#111";
+      const $day = "#7ec0ee";
+      const $starColor = "#fefcd7";
+      const $sunColor = "#f9fa57";
+      const $size = 25;
+      const $transitionDuration = 0.75;
+      const $skyChangeDuration = 0.5;
+      const $positionX = 20;
+      const $positionY = 10;
+
+      const Container = styled.div`
+        background-color: ${(p) =>
+          p.theme === THEME_CONSTANTS.NIGHT ? $night : $day};
+        height: 100vh;
+        transition: background ${$skyChangeDuration} ease;
+        width: 100vw;
+      `;
+
+      const BigStar = styled.div`
+  border-radius: 100%;
+  height: ${$size}vh;
+  left: ${$positionX}vw;
+  position: absolute;
+  top: ${$positionY}vh;
+  transition transform ${$transitionDuration}s ease 0s;
+  width: ${$size}vh;
+  z-index: 2;
+`;
+
+      const Moon = BigStar.extend`
+        background-color: ${$starColor};
+        box-shadow: 0px 0px 50px #eee;
+        overflow: hidden;
+        transform: ${(p) =>
+          p.theme === THEME_CONSTANTS.NIGHT
+            ? "scale(1)"
+            : "scale(0.5) translateX(-75vw) translateY(-120vh)"};
+        &:after {
+          box-shadow: inset 10px 10px 10px #bbb;
+          border-radius: 100%;
+          content: "";
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+      `;
+
+      const Craters = styled.div`
+        background-color: #ddd;
+        border-radius: 100%;
+        opacity: 0.5;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        height: ${$size * 0.25}vh;
+        width: ${$size * 0.25}vh;
+
+        &:before {
+          background-color: #ddd;
+          content: "";
+          display: block;
+          border-radius: 100%;
+          height: 50%;
+          width: 50%;
+          position: absolute;
+          top: 110%;
+        }
+
+        &:after {
+          background-color: #ddd;
+          content: "";
+          display: block;
+          border-radius: 100%;
+          height: 30%;
+          width: 30%;
+          position: absolute;
+          top: 80%;
+          right: 110%;
+        }
+      `;
+
+      const CloudMove = keyframes`
+  0% {
+    transform: translateX(300%);
+    opacity: 0;
+  }
+  50% {
+    opacity: .75;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-300%);
+    opacity: 0;
+  }
+`;
+
+      const Star = styled.div`
+        background: ${(p) =>
+          p.theme === THEME_CONSTANTS.NIGHT ? $starColor : $day};
+        border-radius: 100%;
+        height: ${(p) => p.size}px;
+        left: ${(p) => p.x}vw;
+        position: absolute;
+        top: ${(p) => p.y}vh;
+        opacity: ${(p) => (p.theme === THEME_CONSTANTS.NIGHT ? 1 : 0)};
+        transition: background ${$transitionDuration}s ease 0s,
+          opacity ${$transitionDuration}s ease 0s;
+        width: ${(p) => p.size}px;
+        z-index: 1;
+      `;
+
+      const Sun = BigStar.extend`
+        background-color: ${$sunColor};
+        box-shadow: 0px 0px 150px yellow;
+        transform: ${(p) =>
+          p.theme === THEME_CONSTANTS.NIGHT
+            ? "scale(0.5) translateX(75vw) translateY(200vh)"
+            : "scale(1)"};
+      `;
+
+      const Features = styled.div`
+        height: 50%;
+        width: 50%;
+        position: absolute;
+        right: 15%;
+        bottom: 15%;
+        transition: opacity 0.15s ease 0s;
+        transition-delay: 0.75s;
+        opacity: ${(p) => (p.show ? "1" : "0")};
+      `;
+
+      const Blink = keyframes`
+  0%, 5%, 7%, 100% {
+    transform: scaleY(1);
+  }
+  6% {
+    transform scaleY(0);
+  }
+`;
+
+      const Eye = styled.div`
+        border-radius: 100%;
+        height: 15%;
+        width: 15%;
+        background-color: black;
+        position: absolute;
+        top: 25%;
+        animation: ${Blink} 10s infinite 1s;
+        transform-origin: center;
+
+        &:after {
+          background-color: #fff;
+          border-radius: 100%;
+          content: "";
+          height: 40%;
+          width: 40%;
+          position: absolute;
+          top: 5%;
+          right: 30%;
+          display: block;
+        }
+      `;
+
+      const LeftEye = Eye.extend`
+        left: 25%;
+      `;
+
+      const RightEye = Eye.extend`
+        left: 75%;
+      `;
+
+      const Smile = styled.div`
+        width: 55%;
+        height: 25%;
+        border-style: solid;
+        border-width: 4px;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: black;
+        border-radius: 100%;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+      `;
+
+      const Face = ({ show } /*#__PURE__*/) =>
+        React.createElement(
+          Features,
+          { show: show } /*#__PURE__*/,
+          React.createElement(LeftEye, null) /*#__PURE__*/,
+          React.createElement(RightEye, null) /*#__PURE__*/,
+          React.createElement(Smile, null)
+        );
+
+      const ThemeToggleInput = styled.input`
+        cursor: pointer;
+        z-index: 3;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &:checked ~ div {
+          transform: translateX(20px);
+        }
+      `;
+
+      const ThemeToggleContainer = styled.div`
+        left: 10px;
+        position: fixed;
+        top: 10px;
+        width: 50px;
+        height: 30px;
+        border: 4px solid
+          ${(p) => (p.theme === THEME_CONSTANTS.NIGHT ? "#fff" : "dodgerblue")};
+        border-radius: 30px;
+        transition: border-color 0.25s ease 0s;
+      `;
+
+      const ThemeToggleSwitch = styled.div`
+        height: 20px;
+        width: 20px;
+        background: ${(p) =>
+          p.theme === THEME_CONSTANTS.NIGHT ? $starColor : $sunColor};
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: 1px;
+        transform: translateX(0px);
+        transition: background 0.25s ease 0s, transform 0.25s ease 0s;
+      `;
+
+      const ThemeToggle = ({ onChange, checked } /*#__PURE__*/) =>
+        React.createElement(
+          ThemeContext.Consumer,
+          null,
+          (theme /*#__PURE__*/) =>
+            React.createElement(
+              ThemeToggleContainer,
+              { theme: theme } /*#__PURE__*/,
+              React.createElement(ThemeToggleInput, {
+                type: "checkbox",
+                onChange: onChange,
+                checked: checked,
+                title: "Toggle theme",
+              }) /*#__PURE__*/,
+
+              React.createElement(ThemeToggleSwitch, { theme: theme })
+            )
+        );
+
+      const BackDrop = ({ stars } /*#__PURE__*/) =>
+        React.createElement(
+          ThemeContext.Consumer,
+          null,
+          (theme /*#__PURE__*/) =>
+            React.createElement(
+              Container,
+              { theme: theme } /*#__PURE__*/,
+              React.createElement(
+                Sun,
+                { theme: theme } /*#__PURE__*/,
+                React.createElement(Face, {
+                  show: theme === THEME_CONSTANTS.DAY,
+                })
+              ) /*#__PURE__*/,
+
+              React.createElement(
+                Moon,
+                { theme: theme } /*#__PURE__*/,
+                React.createElement(Face, {
+                  show: theme === THEME_CONSTANTS.NIGHT,
+                }) /*#__PURE__*/,
+                React.createElement(Craters, null)
+              ),
+
+              stars.map((star, idx /*#__PURE__*/) =>
+                React.createElement(
+                  Star,
+                  _extends({ key: `star--${idx}` }, star, { theme: theme })
+                )
+              )
+            )
+        );
+
+      const generateItems = (
+        numberOfItems = 5,
+        sizeLimit = 10,
+        animationDuration = 10
+      ) => {
+        const items = [];
+        for (let i = 0; i < numberOfItems; i++) {
+          items.push({
+            animated: Math.random() > 0.75,
+            delay: Math.floor(Math.random() * animationDuration),
+            duration: Math.floor(Math.random() * animationDuration + 5),
+            size: Math.floor(Math.random() * sizeLimit + 1),
+            x: Math.floor(Math.random() * 100 + 1),
+            y: Math.floor(Math.random() * 100 + 1),
+          });
+        }
+        return items;
+      };
+      class App extends Component {
+        constructor(...args) {
+          super(...args);
+          _defineProperty(this, "state", {
+            theme: defaultValue,
+          });
+          _defineProperty(
+            this,
+            "toggle",
+
+            (e) => {
+              const { theme } = this.state;
+              this.setState({
+                theme:
+                  theme === THEME_CONSTANTS.NIGHT
+                    ? THEME_CONSTANTS.DAY
+                    : THEME_CONSTANTS.NIGHT,
+              });
+            }
+          );
+          _defineProperty(this, "render", () => {
+            const { stars } = this.props;
+            const { theme } = this.state;
+            return /*#__PURE__*/ React.createElement(
+              ThemeContext.Provider,
+              { value: theme } /*#__PURE__*/,
+              React.createElement(BackDrop, { stars: stars }) /*#__PURE__*/,
+              React.createElement(ThemeToggle, {
+                checked: theme === defaultValue,
+                onChange: this.toggle,
+              })
+            );
+          });
+        }
+      }
+
+      _defineProperty(App, "defaultProps", { stars: generateItems(20, 4) });
+      render(
+        /*#__PURE__*/ React.createElement(App, null),
+        document.querySelector("#root")
+      );
+    </script>
+  </body>
+</html>
