@@ -6,3 +6,7 @@
 - [图片壁纸](https://github.com/ldxw/cdn/tree/master/image) | image
 - [logo](https://github.com/ldxw/cdn/tree/master/logo) | logo
 - [静态文件](https://github.com/ldxw/cdn/tree/master/static) | static
+
+
+# cdn链接
+https://cdn.jsdelivr.net/gh/ldxw/cdn@master/
