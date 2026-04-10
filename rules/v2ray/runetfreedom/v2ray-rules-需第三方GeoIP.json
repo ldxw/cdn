@@ -128,6 +128,24 @@
     "remarks": "代理扩展GeoIP（需先更新第三方GeoIP）"
   },
   {
+  "type": "field",
+  "outboundTag": "proxy",
+  "domain": [
+    "domain:example.com"
+  ],
+  "enabled": false,
+  "remarks": "手动添加代理域名"
+},
+{
+  "type": "field",
+  "outboundTag": "proxy",
+  "ip": [
+    "1.1.1.1"
+  ],
+  "enabled": false,
+  "remarks": "手动添加代理IP"
+}
+  {
     "type": "field",
     "port": "0-65535",
     "outboundTag": "direct",
