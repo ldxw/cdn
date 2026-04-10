@@ -64,7 +64,7 @@ https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/latest/download/
 例如：
 
 ```text
-https://raw.githubusercontent.com/ldxw/cdn/master/rules/v2ray/runetfreedom/v2ray-rules-需第三方GeoIP.json
+https://raw.githubusercontent.com/ldxw/cdn/master/rules/v2ray/runetfreedom/v2ray-rules.json
 ```
 
 ## 规则说明
@@ -121,16 +121,6 @@ https://raw.githubusercontent.com/ldxw/cdn/master/rules/v2ray/runetfreedom/v2ray
   - Twitter
   - DDOS-GUARD
   - Yandex
-
-## 文件说明
-
-建议规则文件命名为：
-
-```text
-v2ray-rules-需第三方GeoIP.json
-```
-
-这样更容易区分这份规则依赖第三方 Geo 文件。
 
 ## 注意事项
 
