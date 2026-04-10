@@ -64,7 +64,7 @@ https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/latest/download/
 例如：
 
 ```text
-https://raw.githubusercontent.com/ldxw/cdn/master/rules/v2ray/runetfreedom/v2ray-rules.json
+https://raw.githubusercontent.com/ldxw/cdn/master/rules/v2ray/runetfreedom/v2ray-rules-GeoIP.json
 ```
 
 ## 规则说明
