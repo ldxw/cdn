@@ -1,0 +1,137 @@
+[
+  {
+    "type": "field",
+    "outboundTag": "proxy",
+    "domain": [
+      "domain:cloudflare-dns.com",
+      "domain:dns.google"
+    ],
+    "enabled": true,
+    "remarks": "代理远程DNS"
+  },
+  {
+    "type": "field",
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:gfw",
+      "geosite:greatfire"
+    ],
+    "enabled": true,
+    "remarks": "代理GFW域名"
+  },
+  {
+    "type": "field",
+    "outboundTag": "direct",
+    "domain": [
+      "domain:scdown.qq.com",
+      "domain:qbwup.imtt.qq.com",
+      "domain:update.browser.qq.com"
+    ],
+    "enabled": false,
+    "remarks": "绕过腾讯下载"
+  },
+  {
+    "type": "field",
+    "outboundTag": "proxy",
+    "domain": [
+      "domain:github.com",
+      "domain:githubassets.com",
+      "domain:githubusercontent.com"
+    ],
+    "enabled": true,
+    "remarks": "代理GitHub"
+  },
+  {
+    "type": "field",
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:google"
+    ],
+    "enabled": true,
+    "remarks": "代理Google"
+  },
+  {
+    "type": "field",
+    "outboundTag": "block",
+    "domain": [
+      "domain:mousegesturesapi.com"
+    ],
+    "enabled": true,
+    "remarks": "阻止CrxMouse上报"
+  },
+  {
+    "type": "field",
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private"
+    ],
+    "enabled": true,
+    "remarks": "绕过局域网IP"
+  },
+  {
+    "type": "field",
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:private"
+    ],
+    "enabled": true,
+    "remarks": "绕过局域网域名"
+  },
+  {
+    "type": "field",
+    "outboundTag": "direct",
+    "domain": [
+      "domain:bitwarden.com",
+      "domain:bitwarden.net",
+      "domain:baiyunju.cc",
+      "domain:letsencrypt.org",
+      "domain:adblockplus.org",
+      "domain:safesugar.net",
+      "geosite:cn",
+      "geosite:adobe",
+      "geosite:adobe-activation",
+      "geosite:microsoft",
+      "geosite:msn",
+      "geosite:apple"
+    ],
+    "enabled": true,
+    "remarks": "绕过常用直连域名"
+  },
+  {
+    "type": "field",
+    "outboundTag": "block",
+    "domain": [
+      "domain:googleads.g.doubleclick.net",
+      "domain:adservice.google.com",
+      "geosite:category-ads-all",
+      "geosite:win-spy"
+    ],
+    "enabled": true,
+    "remarks": "阻止广告"
+  },
+  {
+    "type": "field",
+    "outboundTag": "proxy",
+    "ip": [
+      "geoip:cloudflare",
+      "geoip:cloudfront",
+      "geoip:facebook",
+      "geoip:fastly",
+      "geoip:google",
+      "geoip:netflix",
+      "geoip:telegram",
+      "geoip:twitter",
+      "geoip:ddos-guard",
+      "geoip:yandex"
+    ],
+    "enabled": true,
+    "remarks": "代理扩展GeoIP（需先更新第三方GeoIP）"
+  },
+  {
+    "type": "field",
+    "port": "0-65535",
+    "outboundTag": "direct",
+    "enabled": true,
+    "remarks": "最终直连"
+  }
+]
