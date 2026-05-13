@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>默认主页</title>
     <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/ldxw/cdn@master/static/Home-Page/css/style.css">
-    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.webstatic.cn/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="profile-card">
@@ -40,23 +40,39 @@
         </div>
     </div>-->
 <script>
-document.querySelector('.contact-trigger').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.modal-overlay').classList.add('active');
-});
+const contactTrigger = document.querySelector('.contact-trigger');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalClose = document.querySelector('.modal-close');
 
-document.querySelector('.modal-close').addEventListener('click', () => {
-    document.querySelector('.modal-overlay').classList.remove('active');
-});
+if (contactTrigger && modalOverlay && modalClose) {
+    contactTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalOverlay.classList.add('active');
+    });
 
-document.querySelector('.modal-overlay').addEventListener('click', (e) => {
-    if (e.target === document.querySelector('.modal-overlay')) {
-        document.querySelector('.modal-overlay').classList.remove('active');
-    }
-});
+    modalClose.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+}
 </script>
-<center><footer class="site-footer">
-    © 2025 默认主页
-</footer></center>
+<footer class="site-footer">
+  © <span id="year"></span> 默认主页
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<style>
+  .site-footer {
+    text-align: center;
+  }
+</style>
 </body>
 </html>
